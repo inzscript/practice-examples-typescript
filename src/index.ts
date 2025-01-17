@@ -48,6 +48,15 @@ function placeOrder(pizzaName : string) : Order | undefined {
     return newOrder;
 }
 
+// Function to replace AddNewPizza and PlaceOrder using explicit types
+function addToArray<T>(array: T[], item: T) : T[] {
+    array.push(item);
+    return array;
+}
+
+addToArray<Pizza>(menu, { id: nextPizzaId++, name: "Meat Feast", price: 9 });
+addToArray<Order>(orderHistory, { id: nextOrderId++, pizza: menu[2], status: "completed" });
+
 function completeOrder(orderId : number) : Order | undefined {
     let order = orderHistory.find(order => order.id === orderId);
     
@@ -71,11 +80,11 @@ function getPizzaDetails(identifier : string | number) : Pizza | undefined {
 }
 
 // Run a simulated order
-addNewPizza({ name: "Meat Feast", price: 9 });
-addNewPizza({ name: "Vegan", price: 8 });
-addNewPizza({ name: "BBQ Chicken", price: 8 });
+// addNewPizza({ name: "Meat Feast", price: 9 });
+// addNewPizza({ name: "Vegan", price: 8 });
+// addNewPizza({ name: "BBQ Chicken", price: 8 });
 
-placeOrder("Vegetarian");
+// placeOrder("Vegetarian");
 completeOrder(1);
 
 console.log("Cash in register", cashInRegister);
