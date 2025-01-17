@@ -28,9 +28,12 @@ node dist/example.js
 
 ## Steps needed to Configure Typescript Compiler
 
-* *creates tsconfig.json file
-* Make changes to default folder designation. src and dist. Enable remove comments and fail on errors.
-* Now once the src folder is setup, in the root directory all that is needed to compile is to run:
+* When running the "init" option it will create the tsconfig.json file
+* Updatte the json file and make changes to default folder designation for the following src and dist. 
+* Enable remove comments and fail on errors.
+* Review the tsconfig.json file for common things to enable.
+
+Once the src folder is setup, in the root directory all that is needed to compile and run each ts as needed:
 
 ```
 tsc -- init
