@@ -176,3 +176,18 @@ updateUser(2, { username: 'Johnny' });
 addNewUser({ username: 'Jane', role: 'admin' });
 
 console.log(users);
+
+
+
+// Utility Types: Generics
+const gameScores: number[] = [10, 20, 30, 40, 50];
+const favoriteColors: string[] = ['red', 'green', 'blue'];
+const voters = [{ name: 'Steve', age: 30 }, { name: 'John', age: 25 }];
+
+function getLastItem<Type>(array: Type[]) : Type {
+    return array[array.length - 1];
+}
+
+console.log(getLastItem(gameScores));
+console.log(getLastItem(favoriteColors));
+console.log(getLastItem(voters));
